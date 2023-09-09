@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const postApi = () => {
   const instance = axios.create({
-    baseURL: 'https://kusitms.shop',
+    baseURL: 'https://koeyhk.shop',
     //timeout: 3000,
   });
 
@@ -12,7 +12,7 @@ const postApi = () => {
         title: title,
         description: description,
         body: body,
-        tagList: tagList,
+        tags: tagList,
       });
       return response;
     } catch (error) {
@@ -25,7 +25,7 @@ const postApi = () => {
       const response = await instance.get(`/api/v1/articles/${id}`);
       return response.data;
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
