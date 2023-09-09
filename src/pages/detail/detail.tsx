@@ -10,8 +10,9 @@ const DetailPage = () => {
   const articleDelete = useArticleDelete(Number(id));
   const navigate = useNavigate();
 
-  const handleArticleUpdate = () => {};
-
+  const handleArticleUpdate = () => {
+    navigate(`/modify/article/${id}`);
+  };
   const handleArticleDelete = () => {
     articleDelete.mutate();
     navigate('/');
