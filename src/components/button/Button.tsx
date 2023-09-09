@@ -3,10 +3,15 @@ import styled from 'styled-components';
 interface buttonProps {
   children: React.ReactNode;
   onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
-const Button = ({ children, onClick }: buttonProps) => {
-  return <ButtonStyle onClick={onClick}>{children}</ButtonStyle>;
+const Button = ({ children, onClick, style }: buttonProps) => {
+  return (
+    <ButtonStyle onClick={onClick} style={style}>
+      {children}
+    </ButtonStyle>
+  );
 };
 
 export default Button;
