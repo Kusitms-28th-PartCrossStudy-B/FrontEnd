@@ -1,5 +1,6 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
+import PostPage from './pages/post/post';
 import MainPage from './pages/main/main';
 import DetailPage from './pages/detail/detail';
 import Header from './components/header/Header';
