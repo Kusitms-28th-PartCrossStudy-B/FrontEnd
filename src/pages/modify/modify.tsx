@@ -38,7 +38,7 @@ const ModifyPage = () => {
     }
   };
   useEffect(() => {
-    getData(id);
+    getData(Number(id));
   }, []);
 
   return (
