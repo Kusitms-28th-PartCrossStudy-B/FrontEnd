@@ -10,9 +10,9 @@ const ModifyPage = () => {
   const [subTitle, setSubTitle] = useState<string>();
   const [content, setContent] = useState<string>();
   const [tag, setTag] = useState({
-    study: '',
-    health: '',
-    drink: '',
+    study: 'STUDY',
+    health: 'HEALTH',
+    drink: 'DRINK',
   });
   const modifyPost = async () => {
     try {
