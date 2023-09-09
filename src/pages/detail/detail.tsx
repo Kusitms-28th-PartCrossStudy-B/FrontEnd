@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 import { useArticleDetail } from '../../hooks/useArticleDetail';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../../components/button/Button';
+import { useArticleDelete } from '../../hooks/useArticleDelete';
 
 const DetailPage = () => {
   const { id } = useParams();
   const { article } = useArticleDetail(Number(id));
+  const articleDelete = useArticleDelete(Number(id));
+  const navigate = useNavigate();
+
+  const handleArticleUpdate = () => {};
+
+  const handleArticleDelete = () => {
+    articleDelete.mutate();
+    navigate('/');
+  };
 
   return (
     <>
@@ -14,8 +24,8 @@ const DetailPage = () => {
           <Banner>
             <Title>{article.data.title}</Title>
             <DetailBox>
-              <Button>글 수정</Button>
-              <Button>글 지우기</Button>
+              <Button onClick={handleArticleUpdate}>글 수정</Button>
+              <Button onClick={handleArticleDelete}>글 지우기</Button>
             </DetailBox>
           </Banner>
           <Content>{article.data.description}</Content>
