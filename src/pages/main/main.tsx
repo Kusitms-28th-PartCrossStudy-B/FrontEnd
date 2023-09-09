@@ -17,12 +17,14 @@ export interface Article {
 const FilterList = ['study', 'health', 'drink'];
 
 interface FilterType {
+  all: string;
   study: string;
   health: string;
   drink: string;
 }
 
 const FilterToKorean: FilterType = {
+  all: '전체',
   study: '스터디',
   health: '헬스',
   drink: '술',
@@ -31,7 +33,7 @@ const FilterToKorean: FilterType = {
 const MainPage = () => {
   const fetchArticle = () => defaultAxios.get('/api/v1/articles');
   const { isLoading, data } = useQuery(['article'], fetchArticle);
-  const [selected, setSelected] = useState<string>('');
+  const [selected, setSelected] = useState<string>('all');
 
   if (isLoading) return <div>loading...</div>;
   const articles = data?.data?.data;
@@ -51,18 +53,36 @@ const MainPage = () => {
             </Filter>
           ))}
         </FilterContainer>
-        {articles
-          .filter((article: Article) => article.tagList?.includes(selected))
-          .map(({ articleId, title, description, createdAt, updatedAt }: Article) => (
-            <Post
-              key={articleId}
-              articleId={articleId}
-              title={title}
-              description={description}
-              createdAt={new Date(createdAt)}
-              updatedAt={new Date(updatedAt)}
-            />
-          ))}
+        {/* {selected === 'all' ? () : ()} */}
+        {selected === 'all' ? (
+          <>
+            {articles.map(({ articleId, title, description, createdAt, updatedAt }: Article) => (
+              <Post
+                key={articleId}
+                articleId={articleId}
+                title={title}
+                description={description}
+                createdAt={new Date(createdAt)}
+                updatedAt={new Date(updatedAt)}
+              />
+            ))}
+          </>
+        ) : (
+          <>
+            {articles
+              .filter((article: Article) => article.tagList?.includes(selected))
+              .map(({ articleId, title, description, createdAt, updatedAt }: Article) => (
+                <Post
+                  key={articleId}
+                  articleId={articleId}
+                  title={title}
+                  description={description}
+                  createdAt={new Date(createdAt)}
+                  updatedAt={new Date(updatedAt)}
+                />
+              ))}
+          </>
+        )}
       </MainConatiner>
     </Container>
   );
