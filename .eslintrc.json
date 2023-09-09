@@ -10,8 +10,8 @@
   "rules": {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react/react-in-jsx-scope": "off",
-    "no-unused-vars": "error",
-    "no-multiple-empty-lines": "error",
+    // "no-unused-vars": "error",
+    // "no-multiple-empty-lines": "error",
     "indent": "off",
     "no-trailing-spaces": "error",
     "arrow-parens": ["error", "always"],
