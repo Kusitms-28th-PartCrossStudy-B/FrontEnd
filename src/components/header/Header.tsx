@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import logo from '../../assets/logo.png';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ const Header = () => {
 
   return (
     <HeaderStyle>
-      <Logo src="https://part-cross-study.vercel.app/kusitm.svg" alt="logo" onClick={handleLogoClick} />
+      <Logo src={logo} alt="logo" onClick={handleLogoClick} />
       <ArticleCreate onClick={handleArticleCreate}>글 쓰기</ArticleCreate>
     </HeaderStyle>
   );
@@ -24,12 +25,11 @@ const HeaderStyle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10rem;
+  padding: 0.7rem 10rem;
 `;
 
 const Logo = styled.img`
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 8rem;
   cursor: pointer;
 `;
 
