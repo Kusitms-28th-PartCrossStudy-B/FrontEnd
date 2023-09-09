@@ -30,7 +30,6 @@ export default DetailPage;
 
 const Banner = styled.div`
   width: 100%;
-  height: 12rem;
   background: #2a83ff;
   padding: 2rem 10rem;
 `;
