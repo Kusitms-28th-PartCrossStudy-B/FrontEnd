@@ -38,6 +38,7 @@ const BannerText = styled.div`
   box-sizing: border-box;
 
   h3 {
+    font-family: 'titillium web', 'sans-serif';
     color: white;
     font-size: 3.5rem;
   }

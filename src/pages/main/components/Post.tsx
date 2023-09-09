@@ -12,6 +12,7 @@ interface dateType {
   second: number;
 }
 
+// eslint-disable-next-line no-unused-vars
 const Post: React.FC<Article> = ({ articleId, title, description, createdAt, updatedAt }) => {
   const navigate = useNavigate();
   const [date, setDate] = useState<dateType | null>(null);
