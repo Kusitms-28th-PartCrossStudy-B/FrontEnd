@@ -25,7 +25,9 @@ const DetailPage = () => {
           <Banner>
             <Title>{article.data.title}</Title>
             <DetailBox>
-              <Button onClick={handleArticleUpdate}>글 수정</Button>
+              <Button onClick={handleArticleUpdate} style={{ marginRight: '0.5rem' }}>
+                글 수정
+              </Button>
               <Button onClick={handleArticleDelete}>글 지우기</Button>
             </DetailBox>
           </Banner>
