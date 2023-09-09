@@ -2,7 +2,7 @@ import { Button, TextField } from '@mui/material';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import postApi from '../../apis/postApi';
-//import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ModifyPage = () => {
   const { id } = useParams();
